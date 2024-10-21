@@ -17,7 +17,7 @@ const RegisterPage = () => {
       if (password !== secPassword) {
         throw new Error("⚠︎ Passwords do not match please try again ⚠︎");
       }
-      const response = await api.post("/user/register", { name, email, password });
+      const response = await api.post("/user", { name, email, password });
       if (response.status === 200) {
         navigate("/login");
       } else {
