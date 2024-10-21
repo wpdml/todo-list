@@ -20,7 +20,7 @@ const LoginPage = () => {
         sessionStorage.setItem("token", response.data.token);
         api.defaults.headers["authorization"] = "Bearer " + response.data.token;
         setError("");
-        navigate("/todo");
+        navigate("/");
       }
       throw new Error(response.message);
     } catch (error) {
@@ -83,7 +83,7 @@ const LoginPage = () => {
         </button>
         <span>
           If you don't have an account{" "}
-          <Link to="/" className="link">
+          <Link to="/register" className="link">
             Register
           </Link>
         </span>

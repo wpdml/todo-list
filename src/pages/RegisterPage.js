@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import api from "../utils/api";
 import { Link, useNavigate } from "react-router-dom";
@@ -18,8 +17,8 @@ const RegisterPage = () => {
       if (password !== secPassword) {
         throw new Error("⚠︎ Passwords do not match please try again ⚠︎");
       }
-      const response = await api.post("/user", { name, email, password });
-      if (response.status == 200) {
+      const response = await api.post("/user/register", { name, email, password });
+      if (response.status === 200) {
         navigate("/login");
       } else {
         throw new Error(response.data.error);
