@@ -106,7 +106,7 @@ h2 {
   padding: 10px;
   width: 100%;
   border: 1px dotted pink;
-  border-radius: 10px;
+  border-radius: 18px;
   color: rgb(173, 131, 201);
 }
 
@@ -126,7 +126,7 @@ h2 {
   background-size: cover;
   border: 1px dotted rgb(210, 124, 249);
   color: white;
-  border-radius: 10px;
+  border-radius: 16px;
   transition: 0.5s ease-in-out;
   width: 25%;
 }
@@ -141,14 +141,14 @@ h2 {
 .button-add {
   margin-top: 5px;
   font-family: GroovyFont;
-  font-size: 23px;
-  height: 40px;
+  font-size: 21px !important;
+  height:38px !important;
   width: 100%;
   background-image: url(./z4.jpg);
   background-size: cover;
   border: 1px dotted rgb(210, 124, 249);
   color: white;
-  border-radius: 10px;
+  border-radius: 13px;
   transition: 0.5s ease-in-out;
 }
 
@@ -164,7 +164,7 @@ h2 {
   background-size: cover;
   border: 1px dotted pink;
   color: lightblue;
-  border-radius: 10px;
+  border-radius: 11px;
   margin: 10px;
   transition: ease-in-out 0.5s;
   color: #ffffff;
@@ -328,7 +328,7 @@ h2 {
 
 .login-bar {
   border: dotted 1px rgb(189, 255, 255);
-  border-radius: 10px;
+  border-radius: 13px;
   color: rgb(173, 131, 201);
   font-size: 15px;
 }
@@ -382,7 +382,7 @@ h4 {
   padding: 5px 8px;
   cursor: pointer;
   font-size: 21px;
-  border-radius: 5px;
+  border-radius: 18px;
   transition: 0.3s ease-in-out;
 }
 
