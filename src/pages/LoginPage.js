@@ -84,7 +84,7 @@ const LoginPage = () => {
         <span>
           If you don't have an account{" "}
           <Link to="/register" className="link">
-            Register
+            Register!
           </Link>
         </span>
       </Form>

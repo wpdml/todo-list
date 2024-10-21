@@ -106,7 +106,7 @@ const RegisterPage = () => {
         <span>
           Do you already have an account?{" "}
           <Link to="/login" className="link">
-            Login
+            Login!
           </Link>
         </span>
       </Form>
