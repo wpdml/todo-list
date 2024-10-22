@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container";
 import api from "../utils/api";
 import { useNavigate } from "react-router-dom";
 
-function TodoPage() {
+function TodoPage({user,setUser}) {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
   const navigate = useNavigate();
@@ -59,21 +59,30 @@ function TodoPage() {
         getTasks();
       }
     } catch (error) {
-      console.log("error", error);
+      console.log("Error deleting task:", error);
     }
   };
 
   useEffect(() => {
-    getTasks();
-  }, []);
+    console.log("User status before getting tasks:", user);
+    if (!user) {
+      console.log("User not logged in, redirecting to login...");
+      navigate("/login");
+    } else {
+      console.log("User is logged in, fetching tasks...");
+      getTasks();
+    }
+  }, [user, navigate]);
 
   const completedTasksCount = todoList.filter((item) => item.isComplete).length;
   const allTasksCompleted =
     todoList.length > 0 && completedTasksCount === todoList.length;
 
   const handleLogout = () => {
+    console.log("Logging out user:", user);
     sessionStorage.removeItem("token");
     api.defaults.headers["authorization"] = "";
+    setUser(null);
     navigate("/login");
   };
 

@@ -1,31 +1,59 @@
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../utils/api";
 
-const LoginPage = () => {
+const LoginPage = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
+      if (!email) {
+        throw new Error("⚠︎ Please enter your email address ⚠︎");
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        throw new Error("⚠︎ Please enter a valid email address ⚠︎");
+      }
+      if (!email.includes("gmail.com")) {
+        throw new Error("⚠︎ Email must contain 'gmail.com' ⚠︎");
+      }
+      if (!password) {
+        throw new Error("⚠︎ Please enter your password ⚠︎");
+      }
       const response = await api.post("/user/login", { email, password });
       if (response.status === 200) {
-        setUser(response.data.user);
         sessionStorage.setItem("token", response.data.token);
         api.defaults.headers["authorization"] = "Bearer " + response.data.token;
+        setUser(response.data.user); 
         setError("");
         navigate("/");
+      } else {
+        throw new Error(response.data.message || "Login failed");
       }
-      throw new Error(response.message);
     } catch (error) {
-      setError(error.message);
+      if (error.response) {
+        switch (error.response.status) {
+          case 420:
+            setError("⚠︎ This email is not registered ⚠︎");
+            break;
+          case 401:
+            setError("⚠︎ Wrong password ⚠︎");
+            break;
+          default:
+            setError(error.response.data.message || "An error occurred. Please try again.");
+            break;
+        }
+      } else {
+        setError(error.message || "An error occurred. Please try again.");
+      }
     }
   };
+
 
   const createParticle = () => {
     const particle = document.createElement("div");

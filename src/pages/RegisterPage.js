@@ -44,7 +44,10 @@ const RegisterPage = () => {
       }
       console.log("wow!!!", response);
     } catch (error) {
-      setSError(error.message);
+      if (error.response && error.response.status === 409) {
+      } else {
+        setSError(error.message);
+      }
     }
   };
 
