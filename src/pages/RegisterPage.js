@@ -14,6 +14,25 @@ const RegisterPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      if (!name) {
+        throw new Error("⚠︎ Please enter your name ⚠︎")
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        throw new Error("⚠︎ Please enter a valid email address ⚠︎");
+      }
+      if (!email.includes("gmail.com")) {
+        throw new Error("⚠︎ Email must contain 'gmail.com' ⚠︎");
+      }
+      if (!password) {
+        throw new Error("⚠︎ Please create a password ⚠︎");
+      }
+      if (password.length < 6) {
+        throw new Error("⚠︎ Password must be at least 6 characters ⚠︎");
+      }
+      if (!secPassword) {
+        throw new Error("⚠︎ Please re-enter the password ⚠︎");
+      }
       if (password !== secPassword) {
         throw new Error("⚠︎ Passwords do not match please try again ⚠︎");
       }
