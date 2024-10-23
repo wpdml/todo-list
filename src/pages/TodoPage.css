@@ -33,6 +33,7 @@
 }
 
 .todo-box {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,7 +89,7 @@ h1 {
   }
 
   .button-area {
-    width: 25%;
+    width: 45% !important;
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
@@ -183,7 +184,7 @@ h6 {
   background-position: center;
   background-size: cover;
   border: 1px dotted rgb(164, 205, 173);
-  color: rgb(200, 157, 220);
+  color: rgb(198, 166, 212);
   border-radius: 13px;
   transition: 0.5s ease-in-out;
 }
@@ -270,7 +271,7 @@ h6 {
       0 0 50px rgba(234, 217, 238, 0.4);
   }
   25% {
-    opacity: 0.7; 
+    opacity: 0.7;
     text-shadow: 0 0 10px rgba(234, 217, 238, 0.8),
       0 0 20px rgba(234, 217, 238, 0.6), 0 0 30px rgba(234, 217, 238, 0.4),
       0 0 40px rgba(234, 217, 238, 0.2);
@@ -288,7 +289,7 @@ h6 {
       0 0 40px rgba(234, 217, 238, 0.2);
   }
   100% {
-    opacity: 1; 
+    opacity: 1;
     text-shadow: 0 0 15px rgba(234, 217, 238, 1.2),
       0 0 25px rgba(234, 217, 238, 1), 0 0 35px rgba(234, 217, 238, 0.8),
       0 0 50px rgba(234, 217, 238, 0.4);

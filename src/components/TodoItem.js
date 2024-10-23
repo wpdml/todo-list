@@ -18,7 +18,7 @@ const TodoItem = ({ item, taskComplete, deleteTask }) => {
             <button
               className={`button-delete ${item.isComplete ? "button-disabled" : ""}`}
               onClick={() => deleteTask(item._id)}
-              disabled={item.isComplete} // Disable the button if the task is complete
+              disabled={item.isComplete} 
             >
               Delete
             </button>
