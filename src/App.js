@@ -11,22 +11,20 @@ import PrivateRoute from "./route/PrivateRoute";
 function App() {
   const [user, setUser] = useState(null);
 
-  const fetchUser = async () => {
+  const getUser = async () => {
     try {
       const storedToken = sessionStorage.getItem("token");
       if (storedToken) {
-        api.defaults.headers["authorization"] = "Bearer " + storedToken;
-        const response = await api.get("/user");
+        const response = await api.get("/user/me");
         setUser(response.data.user);
       }
     } catch (error) {
-      console.error("Error fetching user:", error);
       setUser(null);
     }
   };
 
   useEffect(() => {
-    fetchUser();
+    getUser();
   }, []);
 
   return (
@@ -42,7 +40,11 @@ function App() {
       <Route
         path="/login"
         element={
-          user ? <Navigate to="/" replace /> : <LoginPage setUser={setUser} />
+          user ? (
+            <Navigate to="/" replace />
+          ) : (
+            <LoginPage user={user} setUser={setUser} />
+          )
         }
       />
       <Route path="/register" element={<RegisterPage />} />

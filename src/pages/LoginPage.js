@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import api from "../utils/api";
 
-const LoginPage = ({ setUser }) => {
+const LoginPage = ({ setUser, user }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -27,9 +27,9 @@ const LoginPage = ({ setUser }) => {
       }
       const response = await api.post("/user/login", { email, password });
       if (response.status === 200) {
+        setUser(response.data.user);
         sessionStorage.setItem("token", response.data.token);
         api.defaults.headers["authorization"] = "Bearer " + response.data.token;
-        setUser(response.data.user); 
         setError("");
         navigate("/");
       } else {
@@ -45,15 +45,20 @@ const LoginPage = ({ setUser }) => {
             setError("⚠︎ Wrong password ⚠︎");
             break;
           default:
-            setError(error.response.data.message || "An error occurred. Please try again.");
+            setError(
+              error.response.data.message ||
+                "An error occurred. Please try again."
+            );
             break;
         }
       } else {
         setError(error.message || "An error occurred. Please try again.");
       }
     }
+    if (user) {
+      return <Navigate to="/" />;
+    }
   };
-
 
   const createParticle = () => {
     const particle = document.createElement("div");

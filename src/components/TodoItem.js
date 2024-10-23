@@ -7,8 +7,10 @@ const TodoItem = ({ item, taskComplete, deleteTask }) => {
       <Col xs={12} className="task">
         <div className={`todo-item ${item.isComplete ? "item-complete" : ""}`}>
           <div className="todo-content">{item.task}</div>
-
-          <div>
+          <div className="author">
+            {item.author ? item.author.name : "Unknown Author"}'s task
+          </div>
+          <div className="button-area">
             <button
               className="button-delete"
               onClick={() => deleteTask(item._id)}
@@ -19,7 +21,7 @@ const TodoItem = ({ item, taskComplete, deleteTask }) => {
               className="button-delete"
               onClick={() => taskComplete(item._id)}
             >
-              {item.isComplete ? `Uncomplete` : `Complete`}
+              {item.isComplete ? ` Uncomplete ` : ` Complete `}
             </button>
           </div>
         </div>

@@ -17,6 +17,9 @@ const RegisterPage = () => {
       if (!name) {
         throw new Error("⚠︎ Please enter your name ⚠︎")
       }
+      if (name.length>15) {
+        throw new Error("⚠︎ Your name must be under 15 characters ⚠︎")
+      }
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         throw new Error("⚠︎ Please enter a valid email address ⚠︎");
