@@ -17,7 +17,7 @@
 .top-right {
   display: flex;
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 20px;
   z-index: 1000;
 }
@@ -33,7 +33,6 @@
 }
 
 .todo-box {
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,6 +97,7 @@ h1 {
   .todo-box {
     width: 90% !important;
     padding: 20px;
+    margin-top: 70px;
   }
 
   .scroll-box {
