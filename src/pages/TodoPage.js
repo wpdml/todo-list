@@ -12,6 +12,7 @@ function TodoPage({ user, setUser }) {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
   const [error, setError] = useState("");
+  const [logoutPopup, setLogoutPopup] = useState(false);
   const navigate = useNavigate();
 
   const getTasks = async () => {
@@ -93,12 +94,9 @@ function TodoPage({ user, setUser }) {
   };
 
   useEffect(() => {
-    console.log("User status before getting tasks:", user);
     if (!user) {
-      console.log("User not logged in, redirecting to login...");
       navigate("/login");
     } else {
-      console.log("User is logged in, fetching tasks...");
       getTasks();
     }
   }, [user, navigate]);
@@ -108,11 +106,18 @@ function TodoPage({ user, setUser }) {
     todoList.length > 0 && completedTasksCount === todoList.length;
 
   const handleLogout = () => {
-    console.log("Logging out user:", user);
     sessionStorage.removeItem("token");
     api.defaults.headers["authorization"] = "";
     setUser(null);
     navigate("/login");
+  };
+
+  const handleLogoutClick = () => {
+    setLogoutPopup(true);
+  };
+
+  const handleCancelLogout = () => {
+    setLogoutPopup(false);
   };
 
   useEffect(() => {
@@ -139,9 +144,7 @@ function TodoPage({ user, setUser }) {
     particle.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
     particle.style.left = `${Math.random() * 100}vw`;
     particle.style.top = `${Math.random() * 100}vh`;
-    particle.style.animation = `glitter ${
-      Math.random() * 6 + 2
-    }s ease-in-out forwards`;
+    particle.style.animation = `glitter ${Math.random() * 6 + 2}s ease-in-out forwards`;
     particle.style.zIndex = 1000;
     document.body.appendChild(particle);
     const glowIntensity = Math.random() * 15 + 20;
@@ -161,10 +164,10 @@ function TodoPage({ user, setUser }) {
       <div className="box">
         <div className="top-right">
           <div className="welcome">
-          <h6>Welcome,</h6>
-          <div className="welcome-user"> {user?.name || "Unknown User"}!</div>
+            <h6>Welcome,</h6>
+            <div className="welcome-user"> {user?.name || "Unknown User"}!</div>
           </div>
-          <button className="button-logout" onClick={handleLogout}>
+          <button className="button-logout" onClick={handleLogoutClick}>
             Logout 🔓
           </button>
         </div>
@@ -207,6 +210,19 @@ function TodoPage({ user, setUser }) {
           </div>
         </Container>
       </div>
+      {logoutPopup && (
+        <div className="popup-logout">
+          <p>Do you really want to logout?</p>
+          <div className="logout-buttons">
+          <button className="button-cancel" onClick={handleCancelLogout}>
+            Cancel
+          </button>
+          <button className="button-confirm-logout" onClick={handleLogout}>
+            Logout
+          </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

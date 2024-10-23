@@ -338,12 +338,12 @@ h4 {
   0%,
   100% {
     text-shadow: 0px 0px 2px rgba(186, 243, 233, 0.3),
-      /* Subtle glow */ 0px 0px 4px rgba(186, 243, 233, 0.3),
+      0px 0px 4px rgba(186, 243, 233, 0.3),
       0px 0px 6px rgba(186, 243, 233, 0.4);
   }
   50% {
     text-shadow: 0px 0px 2px rgba(186, 243, 233, 0.6),
-      /* Stronger cyan glow */ 0px 0px 6px rgba(186, 243, 233, 0.7),
+      0px 0px 6px rgba(186, 243, 233, 0.7),
       0px 0px 12px rgba(186, 243, 233, 0.9);
   }
 }
@@ -420,38 +420,96 @@ h6 {
   flex-direction: column;
 }
 
+
+.popup-success p {
+  font-family: GroovyFont;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+}
+
+.popup-success button {
+  font-family: GroovyFont;
+  background-color: transparent;
+  background-size: cover;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  padding: 4px 15px;
+  border: white 2px dotted;
+  font-size: 25px;
+  max-width: 200px;
+  transition: 0.3s ease-in-out;
+}
+
+.popup-success button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 .popup-success {
   position: fixed;
+  border: dotted white 2px;
+  display: flex;
+  flex-direction: column; 
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-image: url(./z3.jpg);
-  width: 100%;
-  background-size: cover;
-  color: white;
+  background: radial-gradient(circle at 40% 40%, rgba(239, 91, 72, 0.8), transparent 70%), 
+  radial-gradient(circle at 80% 70%, hsla(158, 77%, 72%, 0.6), transparent 70%), 
+  radial-gradient(circle at 40% 90%, rgb(219, 138, 241,0.7), transparent 90%);
   border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 8px 8px 6px rgba(166, 83, 75, 0.5);
   z-index: 200;
   width: 40%;
   height: 250px;
   padding: 30px 30px;
 }
 
-.popup-success p {
-  font-family: GroovyFont;
-  font-size: 40px;
+.popup-logout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 30% 40%, rgba(239, 91, 72), transparent 90%), 
+  radial-gradient(circle at 80% 70%, hsla(158, 77%, 72%), transparent 90%), 
+  radial-gradient(circle at 40% 90%, rgb(219, 138, 241), transparent 90%);  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  width: 300px;
+  z-index: 1000;
+  font-size: 18px;
 }
 
-.popup-success button {
-  background: none;
+.button-confirm-logout{
+  font-family: GroovyFont;
+  background-color: transparent;
+  background-size: cover;
+  border-radius: 25px;
   color: white;
   cursor: pointer;
-  padding: 0px 7px;
-  border-radius: 3px;
-  border: white 1px solid;
-  font-size: 20px;
+  padding: 4px 15px;
+  border: white 2px dotted;
+  font-size: 23px;
+  max-width: 200px;
+  transition: 0.3s ease-in-out;
+}
+.button-cancel{
+  margin-right: 20px;
+  font-family: GroovyFont;
+  background-color: transparent;
+  background-size: cover;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  padding: 4px 15px;
+  border: white 2px dotted;
+  font-size: 23px;
+  max-width: 200px;
+  transition: 0.3s ease-in-out;
 }
 
-.popup-success button:hover {
+.popup-logout button:hover{
   background-color: rgba(255, 255, 255, 0.2);
 }

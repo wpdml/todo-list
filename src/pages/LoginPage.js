@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import api from "../utils/api";
+import confetti from "canvas-confetti";
 
 const LoginPage = ({ setUser, user }) => {
   const [email, setEmail] = useState("");
@@ -17,6 +18,21 @@ const LoginPage = ({ setUser, user }) => {
       sessionStorage.removeItem("registrationSuccess");
     }
   }, []);
+
+  useEffect(() => {
+    if (successMessage) {
+      triggerConfetti();
+    }
+  },[successMessage]);
+
+  const triggerConfetti = () => {
+    confetti({
+      particleCount: 500,
+      spread: 150,
+      origin: { y: 0.6 },
+      colors: ["#ed6853", "#d1e8d8", "#d0bfdb"],
+    });
+  };
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -68,6 +84,7 @@ const LoginPage = ({ setUser, user }) => {
       return <Navigate to="/" />;
     }
   };
+
 
   const createParticle = () => {
     const particle = document.createElement("div");
