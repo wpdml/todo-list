@@ -8,6 +8,15 @@ const LoginPage = ({ setUser, user }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = useState("");
+
+  useEffect(() => {
+    const success = sessionStorage.getItem("registrationSuccess");
+    if (success) {
+      setSuccessMessage(success);
+      sessionStorage.removeItem("registrationSuccess");
+    }
+  }, []);
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -88,6 +97,12 @@ const LoginPage = ({ setUser, user }) => {
 
   return (
     <div className="display-center">
+      {successMessage && (
+        <div className="popup-success">
+          <p>{successMessage}</p>
+          <button onClick={() => setSuccessMessage("")}>Login ➜</button>
+        </div>
+      )}
       <Form className="main-box" onSubmit={handleLogin}>
         <h4>Login</h4>
         <div className="error">{error && <div>{error}</div>}</div>

@@ -159,9 +159,15 @@ function TodoPage({ user, setUser }) {
   return (
     <div className="glitter-container">
       <div className="box">
-        <button className="button-logout top-right" onClick={handleLogout}>
-          Logout 🔓
-        </button>
+        <div className="top-right">
+          <div className="welcome">
+          <h6>Welcome,</h6>
+          <div className="welcome-user"> {user?.name || "Unknown User"}!</div>
+          </div>
+          <button className="button-logout" onClick={handleLogout}>
+            Logout 🔓
+          </button>
+        </div>
         <Container className="main-box">
           <h1 className={allTasksCompleted ? "glow" : ""}>⭒ TODO LIST ⭒</h1>{" "}
           {todoList.length > 0 && (

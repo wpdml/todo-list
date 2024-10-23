@@ -41,6 +41,7 @@ const RegisterPage = () => {
       }
       const response = await api.post("/user", { name, email, password });
       if (response.status === 200) {
+        sessionStorage.setItem("registrationSuccess", "Registration successful!");
         navigate("/login");
       } else {
         throw new Error(response.data.error);

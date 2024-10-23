@@ -131,7 +131,7 @@ h2 {
   margin-top: 5px;
   font-family: GroovyFont;
   font-size: 21px !important;
-  height:38px !important;
+  height: 38px !important;
   width: 100%;
   background-image: url(./z4.jpg);
   background-size: cover;
@@ -335,15 +335,16 @@ h4 {
 }
 
 @keyframes sparkle {
-  0%, 100% {
-    text-shadow: 0px 0px 2px rgba(186, 243, 233, 0.3), /* Subtle glow */
-                 0px 0px 4px rgba(186, 243, 233, 0.3),
-                 0px 0px 6px rgba(186, 243, 233, 0.4);
+  0%,
+  100% {
+    text-shadow: 0px 0px 2px rgba(186, 243, 233, 0.3),
+      /* Subtle glow */ 0px 0px 4px rgba(186, 243, 233, 0.3),
+      0px 0px 6px rgba(186, 243, 233, 0.4);
   }
   50% {
-    text-shadow: 0px 0px 2px rgba(186, 243, 233, 0.6), /* Stronger cyan glow */
-                 0px 0px 6px rgba(186, 243, 233, 0.7),
-                 0px 0px 12px rgba(186, 243, 233, 0.9);
+    text-shadow: 0px 0px 2px rgba(186, 243, 233, 0.6),
+      /* Stronger cyan glow */ 0px 0px 6px rgba(186, 243, 233, 0.7),
+      0px 0px 12px rgba(186, 243, 233, 0.9);
   }
 }
 
@@ -352,18 +353,39 @@ h4 {
   font-family: GroovyFont;
   color: transparent;
   animation: sparkle 2s infinite ease-in-out;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(186, 243, 233, 0.8), rgba(255, 255, 255, 0.9));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(186, 243, 233, 0.8),
+    rgba(255, 255, 255, 0.9)
+  );
   background-clip: text;
   position: relative;
   display: inline-block;
 }
 
-.error{
+.error {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.button-logout{
+h6 {
+  font-family: GroovyFont;
+  font-size: 28px;
+}
+
+.welcome {
+  display: flex;
+  margin-top: 5px;
+  gap: 5px;
+}
+
+.welcome-user {
+  font-size: 20px;
+}
+
+.button-logout {
+  margin-left: 20px;
   background-color: transparent;
   color: white;
   font-family: GroovyFont;
@@ -375,18 +397,17 @@ h4 {
   transition: 0.3s ease-in-out;
 }
 
-.button-logout:hover{
-  background-color: rgb(255, 255, 255,0.2);
+.button-logout:hover {
+  background-color: rgb(255, 255, 255, 0.2);
 }
 
 .top-right {
+  display: flex;
   position: absolute;
   top: 10px;
-  right: 20px; 
-  z-index: 1000; 
+  right: 20px;
+  z-index: 1000;
 }
-
-
 
 .todo-content {
   max-width: 50%;
@@ -399,5 +420,38 @@ h4 {
   flex-direction: column;
 }
 
+.popup-success {
+  position: fixed;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./z3.jpg);
+  width: 100%;
+  background-size: cover;
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+  width: 40%;
+  height: 250px;
+  padding: 30px 30px;
+}
 
+.popup-success p {
+  font-family: GroovyFont;
+  font-size: 40px;
+}
 
+.popup-success button {
+  background: none;
+  color: white;
+  cursor: pointer;
+  padding: 0px 7px;
+  border-radius: 3px;
+  border: white 1px solid;
+  font-size: 20px;
+}
+
+.popup-success button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
