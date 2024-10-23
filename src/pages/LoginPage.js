@@ -27,10 +27,10 @@ const LoginPage = ({ setUser, user }) => {
 
   const triggerConfetti = () => {
     confetti({
-      particleCount: 500,
-      spread: 150,
-      origin: { y: 0.6 },
-      colors: ["#ed6853", "#d1e8d8", "#d0bfdb"],
+      particleCount: 200,
+      spread: 100,
+      origin: { y: 0.7 },
+      colors: ["#de705f", "#c1e3d5", "#c8b4d1"],
     });
   };
 
