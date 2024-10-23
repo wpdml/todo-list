@@ -37,12 +37,13 @@ h3 {
   font-family: GroovyFont;
   font-size: 23px;
   height: 40px;
-  width: 100%;
+  width: 30% !important;
+  min-width: 150px;
   background-image: url(./z7.jpg);
   background-size: cover;
   border: 1px dotted rgb(239, 157, 157);
   color: rgb(255, 255, 255);
-  border-radius: 16px;
+  border-radius: 20px;
   transition: 0.5s ease-in-out;
   width: 27%;
 }
