@@ -12,6 +12,7 @@
   align-items: center;
   height: 100vh;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .top-right {
@@ -97,7 +98,7 @@ h1 {
   .todo-box {
     width: 90% !important;
     padding: 20px;
-    margin-top: 70px;
+    margin-top: 90px;
   }
   
 
@@ -141,7 +142,7 @@ h6 {
   margin-left: 20px;
   background-color: rgb(255, 255, 255, 0.2);
   box-shadow: 3px 3px 5px 2px rgba(38, 124, 88, 0.3);
-  color: rgb(82, 176, 146);
+  color: rgb(96, 178, 152);
   font-family: GroovyFont;
   border: white dotted 2px;
   padding: 5px 8px;
