@@ -50,7 +50,8 @@ h1 {
   text-align: center;
   font-size: 75px !important;
   font-family: GroovyFont;
-  color: rgb(254, 250, 190);
+  color: rgb(234, 217, 238);
+  -webkit-text-stroke: rgb(200, 153, 232) 1px;
 }
 
 @media (max-width: 1200px) {
@@ -196,7 +197,7 @@ h6 {
 .button-delete:hover {
   background-image: url("../z4.jpg");
   color: #ffffff;
-  color: rgb(203, 250, 255);
+  color: rgb(205, 239, 217);
   background-position: bottom;
 }
 
@@ -216,33 +217,37 @@ h6 {
 }
 
 .button-complete:hover {
-    background-image: url("../z4.jpg");
-    color: #ffffff;
-    color: rgb(203, 250, 255);
-    background-position: top;
-  }
-  
-  .button-complete {
-    background-image: url("../z3.jpg");
-    background-position: bottom;
-    background-size: cover;
-    border: 1px dotted pink;
-    color: lightblue;
-    border-radius: 11px;
-    margin: 10px;
-    transition: ease-in-out 0.5s;
-    color: #ffffff;
-    padding: 4px 10px !important;
-    font-family: GroovyFont;
-    font-size: 20px;
-  }
+  background-image: url("../z4.jpg");
+  color: #ffffff;
+  color: rgb(205, 239, 217);
+  background-position: top;
+}
+
+.button-complete {
+  background-image: url("../z3.jpg");
+  background-position: bottom;
+  background-size: cover;
+  border: 1px dotted pink;
+  color: lightblue;
+  border-radius: 11px;
+  margin: 10px;
+  transition: ease-in-out 0.5s;
+  color: #ffffff;
+  padding: 4px 10px !important;
+  font-family: GroovyFont;
+  font-size: 20px;
+}
 
 .item-complete {
   background-color: rgba(231, 255, 251, 0.2);
   color: white;
   font-weight: bold;
-  text-decoration: line-through;
   transition: 0.5s ease-in-out;
+}
+
+.line-through {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .scroll-box {
@@ -253,22 +258,40 @@ h6 {
 }
 
 .glow {
-  animation: twinkle 1.5s infinite ease-in-out;
+  animation: twinkle 3s infinite ease-in-out;
   transition: 0.5s ease-in-out;
 }
 
 @keyframes twinkle {
   0% {
     opacity: 1;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff9, 0 0 30px #ff9, 0 0 40px #ff9;
+    text-shadow: 0 0 15px rgba(234, 217, 238, 1.2),
+      0 0 25px rgba(234, 217, 238, 1), 0 0 35px rgba(234, 217, 238, 0.8),
+      0 0 50px rgba(234, 217, 238, 0.4);
+  }
+  25% {
+    opacity: 0.7; 
+    text-shadow: 0 0 10px rgba(234, 217, 238, 0.8),
+      0 0 20px rgba(234, 217, 238, 0.6), 0 0 30px rgba(234, 217, 238, 0.4),
+      0 0 40px rgba(234, 217, 238, 0.2);
   }
   50% {
-    opacity: 0.3;
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff9, 0 0 15px #ff9, 0 0 20px #ff9;
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(234, 217, 238, 1.2),
+      0 0 30px rgba(234, 217, 238, 1), 0 0 40px rgba(234, 217, 238, 0.8),
+      0 0 60px rgba(234, 217, 238, 0.6);
+  }
+  75% {
+    opacity: 0.7;
+    text-shadow: 0 0 10px rgba(234, 217, 238, 0.8),
+      0 0 20px rgba(234, 217, 238, 0.6), 0 0 30px rgba(234, 217, 238, 0.4),
+      0 0 40px rgba(234, 217, 238, 0.2);
   }
   100% {
-    opacity: 1;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff9, 0 0 30px #ff9, 0 0 40px #ff9;
+    opacity: 1; 
+    text-shadow: 0 0 15px rgba(234, 217, 238, 1.2),
+      0 0 25px rgba(234, 217, 238, 1), 0 0 35px rgba(234, 217, 238, 0.8),
+      0 0 50px rgba(234, 217, 238, 0.4);
   }
 }
 
@@ -314,4 +337,14 @@ h2 {
 .input-box:focus {
   outline: none;
   color: rgb(173, 131, 201);
+}
+.button-disabled {
+  cursor: not-allowed;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.button-complete-active {
+  background-size: cover;
+  border: 1px dotted pink;
+  color: rgba(255, 255, 255, 0.7);
 }

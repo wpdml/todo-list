@@ -132,7 +132,7 @@ function TodoPage({ user, setUser }) {
       particleCount: 500,
       spread: 150,
       origin: { y: 0.6 },
-      colors: ["#ed6853", "#d1e8d8", "#d0bfdb"],
+      colors: ["#b8e3d0", "#d9c5e3", "#20b095"],
     });
   };
 
