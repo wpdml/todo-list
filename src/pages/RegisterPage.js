@@ -83,7 +83,7 @@ const RegisterPage = () => {
 
   return (
     <div className="display-center">
-      <Form className="register-box" onSubmit={handleSubmit}>
+      <Form className="main-box" onSubmit={handleSubmit}>
         <h4>Register</h4>
         <div className="error">{error && <div>{error}</div>}</div>
         <Form.Group className="mb-3" controlId="formName">

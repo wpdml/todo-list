@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import api from "../utils/api";
 import { useNavigate } from "react-router-dom";
+import "./TodoPage.css"
 
 function TodoPage({ user, setUser }) {
   const [todoList, setTodoList] = useState([]);
@@ -171,7 +172,7 @@ function TodoPage({ user, setUser }) {
             Logout 🔓
           </button>
         </div>
-        <Container className="main-box">
+        <div className="todo-box">
           <h1 className={allTasksCompleted ? "glow" : ""}>⭒ TODO LIST ⭒</h1>{" "}
           {todoList.length > 0 && (
             <h3>
@@ -208,7 +209,7 @@ function TodoPage({ user, setUser }) {
               taskComplete={taskComplete}
             />
           </div>
-        </Container>
+        </div>
       </div>
       {logoutPopup && (
         <div className="popup-logout">

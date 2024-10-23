@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 
 const TodoItem = ({ item, taskComplete, deleteTask }) => {
   return (
-    <Row>
+    <Row className="task-row">
       <Col xs={12} className="task">
         <div className={`todo-item ${item.isComplete ? "item-complete" : ""}`}>
           <div className="todo-content">{item.task}</div>
@@ -18,7 +18,7 @@ const TodoItem = ({ item, taskComplete, deleteTask }) => {
               Delete
             </button>
             <button
-              className="button-delete"
+              className="button-complete"
               onClick={() => taskComplete(item._id)}
             >
               {item.isComplete ? ` Uncomplete ` : ` Complete `}

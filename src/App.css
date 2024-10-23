@@ -13,15 +13,6 @@ body {
   color: white !important;
 }
 
-.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-}
-
 .main-box {
   display: flex;
   flex-direction: column;
@@ -31,77 +22,13 @@ body {
   padding: 30px;
   border-radius: 40px;
   width: 70% !important;
-  height: 550px;
+  min-height: 550px;
   max-width: 800px !important;
-}
-
-.register-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 120, 108, 0.6);
-  padding: 30px;
-  border-radius: 40px;
-  width: 70% !important;
-  height: 650px;
-  max-width: 800px !important;
-}
-
-h1 {
-  text-align: center;
-  font-size: 75px !important;
-  font-family: GroovyFont;
-  color: rgb(186, 243, 233);
 }
 
 h3 {
   margin-bottom: 15px !important;
   font-size: 20px !important;
-}
-
-.add-item-row {
-  margin-top: 20px !important;
-  margin-bottom: 10px;
-}
-
-h2 {
-  margin-top: 70px !important;
-  margin-bottom: 55px !important;
-  text-align: center;
-  font-size: 40px !important;
-  font-family: GroovyFont;
-  color: rgb(186, 243, 228);
-}
-
-.small-box {
-  max-width: 600px !important;
-}
-
-.todo-item {
-  border-top: 1px dotted rgb(173, 230, 225);
-  border-bottom: 1px dotted rgb(173, 230, 225);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.todo-item:hover {
-  font-weight: bold;
-  transition: 0.5s ease-in-out;
-  background-color: rgba(255, 50, 23, 0.2);
-}
-
-.input-box {
-  padding: 10px;
-  width: 100%;
-  border: 1px dotted pink;
-  border-radius: 18px;
-  color: rgb(173, 131, 201);
-}
-
-.input-box:focus {
-  outline: none;
-  color: rgb(173, 131, 201);
 }
 
 .button-login {
@@ -111,97 +38,25 @@ h2 {
   font-size: 23px;
   height: 40px;
   width: 100%;
-  background-image: url(./z4.jpg);
+  background-image: url(./z7.jpg);
   background-size: cover;
-  border: 1px dotted rgb(210, 124, 249);
-  color: white;
+  border: 1px dotted rgb(239, 157, 157);
+  color: rgb(255, 255, 255);
   border-radius: 16px;
   transition: 0.5s ease-in-out;
-  width: 25%;
+  width: 27%;
 }
 
 .button-login:hover {
-  background-image: url(./z3.jpg);
+  background-image: url(./z11.jpg);
   color: rgb(255, 255, 255);
   font-size: 24px;
-  background-position: center;
 }
 
-.button-add {
-  margin-top: 5px;
-  font-family: GroovyFont;
-  font-size: 21px !important;
-  height: 38px !important;
-  width: 100%;
-  background-image: url(./z4.jpg);
-  background-size: cover;
-  border: 1px dotted rgb(210, 124, 249);
-  color: white;
-  border-radius: 13px;
-  transition: 0.5s ease-in-out;
-}
-
-.button-add:hover {
-  background-image: url(./z3.jpg);
-  color: rgb(216, 240, 255);
+.button-login:active {
+  background-image: url(./z11.jpg);
+  color: rgb(255, 255, 255);
   font-size: 24px;
-  background-position: center;
-}
-
-.button-delete {
-  background-image: url("./z7.jpg");
-  background-size: cover;
-  border: 1px dotted pink;
-  color: lightblue;
-  border-radius: 11px;
-  margin: 10px;
-  transition: ease-in-out 0.5s;
-  color: #ffffff;
-  padding: 4px 8px;
-  font-family: GroovyFont;
-  font-size: 20px;
-}
-
-.button-delete:hover {
-  background-image: url("./z11.jpg");
-  color: #ffffff;
-  color: rgb(203, 250, 255);
-  background-position: center;
-}
-
-.item-complete {
-  background-color: rgb(255, 224, 220, 0.2);
-  color: white;
-  font-weight: bold;
-  text-decoration: line-through;
-  transition: 0.5s ease-in-out;
-}
-
-.scroll-box {
-  max-height: 240px;
-  width: 98%;
-  overflow-y: auto;
-  border-radius: 20px;
-}
-
-.glow {
-  animation: twinkle 1.5s infinite ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-
-@keyframes twinkle {
-  0% {
-    opacity: 1;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff9, 0 0 30px #ff9, 0 0 40px #ff9;
-  }
-  50% {
-    opacity: 0.3;
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff9, 0 0 15px #ff9, 0 0 20px #ff9;
-  }
-  100% {
-    opacity: 1;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff9, 0 0 30px #ff9, 0 0 40px #ff9;
-  }
 }
 
 @media (max-width: 1200px) {
@@ -216,31 +71,14 @@ h2 {
   }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 800px) {
   h1 {
-    font-size: 65px !important;
-  }
-  h2 {
-    font-size: 30px !important;
-  }
-  .input-box {
-    font-size: 16px;
+    font-size: 45px !important;
   }
 
-  .button-add,
-  .button-delete {
-    font-size: 18px;
-    height: 35px;
-  }
-}
-
-@media (max-width: 576px) {
-  h1 {
-    font-size: 55px !important;
-  }
-
-  h2 {
-    font-size: 25px !important;
+  h3 {
+    font-size: 20px !important;
   }
 
   .input-box {
@@ -249,19 +87,53 @@ h2 {
 
   .button-add,
   .button-delete {
-    font-size: 16px;
-    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 1px;
+    padding-bottom: 6px !important;
+  }
+
+  .button-area {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
   }
 
   .main-box {
     width: 90% !important;
     padding: 20px;
   }
-}
 
-.glitter-container {
-  position: relative;
-  overflow: hidden;
+  .scroll-box {
+    width: 98%;
+  }
+
+  .author {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+  .todo-content {
+    width: 100%;
+    padding: 1px;
+    font-size: 16px !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .todo-item {
+    border-top: 1px dotted rgb(173, 230, 225);
+    border-bottom: 1px dotted rgb(173, 230, 225);
+    display: flex;
+    align-items: center;
+  }
+  .task-row{
+    padding: 0px;
+    margin: 0px;
+  }
 }
 
 .particle {
@@ -316,7 +188,7 @@ h2 {
 }
 
 .login-bar {
-  border: dotted 1px rgb(189, 255, 255);
+  border: dotted 1px rgb(255, 255, 255);
   border-radius: 13px;
   color: rgb(173, 131, 201);
   font-size: 15px;
@@ -338,8 +210,7 @@ h4 {
   0%,
   100% {
     text-shadow: 0px 0px 2px rgba(186, 243, 233, 0.3),
-      0px 0px 4px rgba(186, 243, 233, 0.3),
-      0px 0px 6px rgba(186, 243, 233, 0.4);
+      0px 0px 4px rgba(186, 243, 233, 0.3), 0px 0px 6px rgba(186, 243, 233, 0.4);
   }
   50% {
     text-shadow: 0px 0px 2px rgba(186, 243, 233, 0.6),
@@ -369,58 +240,6 @@ h4 {
   margin-bottom: 10px;
 }
 
-h6 {
-  font-family: GroovyFont;
-  font-size: 28px;
-}
-
-.welcome {
-  display: flex;
-  margin-top: 5px;
-  gap: 5px;
-}
-
-.welcome-user {
-  font-size: 20px;
-}
-
-.button-logout {
-  margin-left: 20px;
-  background-color: transparent;
-  color: white;
-  font-family: GroovyFont;
-  border: white dotted 2px;
-  padding: 5px 8px;
-  cursor: pointer;
-  font-size: 21px;
-  border-radius: 18px;
-  transition: 0.3s ease-in-out;
-}
-
-.button-logout:hover {
-  background-color: rgb(255, 255, 255, 0.2);
-}
-
-.top-right {
-  display: flex;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.todo-content {
-  max-width: 50%;
-  padding: 1em;
-  font-size: 20px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-
 .popup-success p {
   font-family: GroovyFont;
   font-size: 50px;
@@ -449,13 +268,21 @@ h6 {
   position: fixed;
   border: dotted white 2px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 40% 40%, rgba(239, 91, 72, 0.8), transparent 70%), 
-  radial-gradient(circle at 80% 70%, hsla(158, 77%, 72%, 0.6), transparent 70%), 
-  radial-gradient(circle at 40% 90%, rgb(219, 138, 241,0.7), transparent 90%);
+  background: radial-gradient(
+      circle at 40% 40%,
+      rgba(239, 91, 72, 0.8),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      hsla(158, 77%, 72%, 0.6),
+      transparent 70%
+    ),
+    radial-gradient(circle at 40% 90%, rgb(219, 138, 241, 0.7), transparent 90%);
   border-radius: 30px;
   box-shadow: 8px 8px 8px 6px rgba(166, 83, 75, 0.5);
   z-index: 200;
@@ -469,20 +296,25 @@ h6 {
   top: 50%;
   left: 50%;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle at 30% 40%, rgba(239, 91, 72), transparent 90%), 
-  radial-gradient(circle at 80% 70%, hsla(158, 77%, 72%), transparent 90%), 
-  radial-gradient(circle at 40% 90%, rgb(219, 138, 241), transparent 90%);  padding: 30px;
-  border-radius: 10px;
+  background: radial-gradient(
+      circle at 30% 40%,
+      rgba(239, 91, 72),
+      transparent 90%
+    ),
+    radial-gradient(circle at 80% 70%, hsla(158, 77%, 72%), transparent 90%),
+    radial-gradient(circle at 40% 90%, rgb(219, 138, 241), transparent 90%);
+  padding: 30px;
+  border-radius: 25px;
   color: white;
   width: 300px;
   z-index: 1000;
   font-size: 18px;
 }
 
-.button-confirm-logout{
+.button-confirm-logout {
   font-family: GroovyFont;
   background-color: transparent;
   background-size: cover;
@@ -495,7 +327,7 @@ h6 {
   max-width: 200px;
   transition: 0.3s ease-in-out;
 }
-.button-cancel{
+.button-cancel {
   margin-right: 20px;
   font-family: GroovyFont;
   background-color: transparent;
@@ -510,6 +342,6 @@ h6 {
   transition: 0.3s ease-in-out;
 }
 
-.popup-logout button:hover{
+.popup-logout button:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
